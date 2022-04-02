@@ -3,6 +3,8 @@ import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import FeelingItem from '../FeelingItem/FeelingItem';
+import UnderstandingItem from '../UnderstandingItem/UnderstandingItem';
+import SupportedItem from '../SupportedItem/SupportedItem';
 
 function App() {
 

@@ -6,20 +6,20 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
-const oneReducer = (state = 'oneReducerOutput', action) => {
-    console.log('I am the oneReducer');
+const feelingReducer = (state = 'feelingReducerOutput', action) => {
+    console.log('I am the feelingReducer');
 
     return state;
 };
 
-const twoReducer = (state = 'twoReducerOutput', action) => {
-    console.log('I am the twoReducer');
+const understandingReducer = (state = 'understandingReducerOutput', action) => {
+    console.log('I am the understandingReducer');
 
     return state;
 };
 
-const threeReducer = (state = 'threeReducerOutput', action) => {
-    console.log('I am the threeReducer');
+const supportedReducer = (state = 'supportedReducerOutput', action) => {
+    console.log('I am the supportedReducer');
 
     return state;
 };
@@ -33,9 +33,9 @@ const fourReducer = (state = 'fourReducerOutput', action) => {
 const storeInstance = createStore(
     combineReducers(
         {
-            oneReducer,
-            twoReducer,
-            threeReducer,
+            feelingReducer,
+            understandingReducer,
+            supportedReducer,
             fourReducer
         }
     )

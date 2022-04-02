@@ -1,21 +1,20 @@
 import { useDispatch } from 'react-redux';
 
-function UnderstandingItem() {
+function SupportedItem() {
 
     return (
+
         <>
-            <h2>How well are you understanding the content?</h2>
+            <h2>How well are you being supported?</h2>
             <input required type="number" placeholder="Understanding?" /><button>NEXT</button>
+
         </>
 
-
     )
-
-
-
-
 
 }
 
 
-export default UnderstandingItem 
+
+
+export default SupportedItem;
