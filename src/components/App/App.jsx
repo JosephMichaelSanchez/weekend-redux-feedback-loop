@@ -6,6 +6,7 @@ import FeelingItem from '../FeelingItem/FeelingItem';
 import UnderstandingItem from '../UnderstandingItem/UnderstandingItem';
 import SupportedItem from '../SupportedItem/SupportedItem';
 import CommentItem from '../CommentItem/CommentItem';
+import ReviewItem from '../ReviewItem/ReviewItem';
 
 function App() {
 
@@ -17,6 +18,11 @@ function App() {
           <h4>Don't forget it!</h4>
         </header>
         <FeelingItem />
+        <UnderstandingItem />
+        <SupportedItem />
+        <CommentItem />
+        <ReviewItem />
+
       </div>
     </Router>
   );
