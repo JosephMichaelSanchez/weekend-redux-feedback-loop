@@ -14,8 +14,8 @@ function SupportedItem() {
             type: 'SET_SUPPORT_NUMBER',
             payload: supNum
         });
-        setFeelNum('');
-        history.push('/understand');
+        setSupNum('');
+        history.push('/comment');
     };
 
     return (
@@ -23,7 +23,7 @@ function SupportedItem() {
         <>
             <h2>How well are you being supported?</h2>
             <form onSubmit={onAddSupNum}>
-                <input required onChange={event => setFeelNum(event.target.value)} min={1} max={5} value={supNum} type="number" /><button>NEXT</button>
+                <input required onChange={event => setSupNum(event.target.value)} min={1} max={5} value={supNum} type="number" /><button>NEXT</button>
             </form>
 
         </>
