@@ -1,10 +1,12 @@
-import {useDispatch} from 'react-redux';
-import {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function FeelingItem() {
 
-    const [feelNum, setFeelNum] = useState('') 
+    const [feelNum, setFeelNum] = useState('')
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const onAddFeelNum = (event) => {
         event.preventDefault();
@@ -12,14 +14,16 @@ function FeelingItem() {
             type: 'SET_FEELING_NUMBER',
             payload: feelNum
         });
+        setFeelNum('');
+        history.push('/understand');
     };
-    
+
 
     return (
         <>
             <h2>How are you feeling today?</h2>
             <form onSubmit={onAddFeelNum}>
-            <input required onChange={evt => setFeelNum(event.target.value)}min={1} max={5} value={feelNum} type="number"/><button>NEXT</button>
+                <input required onChange={event => setFeelNum(event.target.value)} min={1} max={5} value={feelNum} type="number" /><button>NEXT</button>
             </form>
         </>
     )
