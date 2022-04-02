@@ -24,8 +24,8 @@ const supportedReducer = (state = 'supportedReducerOutput', action) => {
     return state;
 };
 
-const fourReducer = (state = 'fourReducerOutput', action) => {
-    console.log('I am the fourReducer');
+const commentReducer = (state = 'commentReducerOutput', action) => {
+    console.log('I am the commentReducer');
 
     return state;
 };
@@ -36,7 +36,7 @@ const storeInstance = createStore(
             feelingReducer,
             understandingReducer,
             supportedReducer,
-            fourReducer
+            commentReducer
         }
     )
 );

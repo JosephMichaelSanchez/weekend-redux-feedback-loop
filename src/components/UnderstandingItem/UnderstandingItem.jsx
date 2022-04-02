@@ -18,4 +18,4 @@ function UnderstandingItem() {
 }
 
 
-export default UnderstandingItem 
+export default UnderstandingItem; 
