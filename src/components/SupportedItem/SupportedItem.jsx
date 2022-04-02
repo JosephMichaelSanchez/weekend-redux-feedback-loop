@@ -6,7 +6,7 @@ function SupportedItem() {
 
         <>
             <h2>How well are you being supported?</h2>
-            <input required type="number" placeholder="Support?" /><button>NEXT</button>
+            <input min={1} max={5} required type="number"/><button>NEXT</button>
 
         </>
 

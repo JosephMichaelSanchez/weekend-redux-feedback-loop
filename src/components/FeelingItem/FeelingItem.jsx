@@ -7,7 +7,7 @@ function FeelingItem() {
     return (
         <>
             <h2>How are you feeling today?</h2>
-            <input required type="number" placeholder='Feeling?'/><button>NEXT</button>
+            <input min={1} max={5} required type="number"/><button>NEXT</button>
         </>
     )
 

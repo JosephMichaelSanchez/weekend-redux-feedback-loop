@@ -19,12 +19,24 @@ function App() {
           <h1 className='App-title'>Feedback!</h1>
           <h4>Don't forget it!</h4>
         </header>
-        <FeelingItem />
-        <UnderstandingItem />
-        <SupportedItem />
-        <CommentItem />
-        <ReviewItem />
-        <SuccessItem />
+        <Route path="/" exact>
+          <FeelingItem />
+        </Route>
+        <Route path="/understand" exact>
+          <UnderstandingItem />
+        </Route>
+        <Route path="/support" exact>
+          <SupportedItem />
+        </Route>
+        <Route path="/comment" exact>
+          <CommentItem />
+        </Route>
+        <Route path="/review" exact>
+          <ReviewItem />
+        </Route>
+        <Route path="/review" exact>
+          <SuccessItem />
+        </Route>
 
 
       </div>
