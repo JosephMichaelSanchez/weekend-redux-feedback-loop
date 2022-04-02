@@ -7,26 +7,38 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const feelingReducer = (state = 'feelingReducerOutput', action) => {
+const feelingReducer = (state = 0, action) => {
     console.log('I am the feelingReducer');
+    if (action.type === 'SET_FEELING_NUMBER'){
+        return Number(action.payload)
+    }
 
     return state;
 };
 
-const understandingReducer = (state = 'understandingReducerOutput', action) => {
+const understandingReducer = (state = 0, action) => {
     console.log('I am the understandingReducer');
+    if (action.type === 'SET_UNDERSTANDING_NUMBER'){
+        return Number(action.payload)
+    }
 
     return state;
 };
 
-const supportedReducer = (state = 'supportedReducerOutput', action) => {
+const supportedReducer = (state = 0, action) => {
     console.log('I am the supportedReducer');
+    if (action.type === 'SET_SUPPORT_NUMBER'){
+        return Number(action.payload)
+    }
 
     return state;
 };
 
-const commentReducer = (state = 'commentReducerOutput', action) => {
+const commentReducer = (state = '', action) => {
     console.log('I am the commentReducer');
+    if (action.type === 'SET_COMMENT'){
+        return action.payload
+    }
 
     return state;
 };
