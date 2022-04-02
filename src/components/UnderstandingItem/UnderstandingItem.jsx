@@ -14,6 +14,8 @@ function UnderstandingItem() {
             type: 'SET_UNDERSTANDING_NUMBER',
             payload: undNum
         });
+        setUndNum('');
+        history.push('/support');
     };
 
     return (
