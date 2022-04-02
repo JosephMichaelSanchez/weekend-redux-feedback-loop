@@ -7,6 +7,8 @@ import UnderstandingItem from '../UnderstandingItem/UnderstandingItem';
 import SupportedItem from '../SupportedItem/SupportedItem';
 import CommentItem from '../CommentItem/CommentItem';
 import ReviewItem from '../ReviewItem/ReviewItem';
+import SuccessItem from '../SuccessItem/SuccessItem';
+
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
         <SupportedItem />
         <CommentItem />
         <ReviewItem />
+        <SuccessItem />
+
 
       </div>
     </Router>

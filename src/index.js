@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import logger from 'redux-logger';
 
 const feelingReducer = (state = 'feelingReducerOutput', action) => {
     console.log('I am the feelingReducer');
@@ -30,6 +31,7 @@ const commentReducer = (state = 'commentReducerOutput', action) => {
     return state;
 };
 
+
 const storeInstance = createStore(
     combineReducers(
         {
@@ -38,6 +40,9 @@ const storeInstance = createStore(
             supportedReducer,
             commentReducer
         }
+    ),
+    applyMiddleware(
+        logger
     )
 );
 
