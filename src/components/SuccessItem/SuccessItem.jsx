@@ -1,4 +1,4 @@
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 function SuccessItem() {
@@ -9,7 +9,7 @@ function SuccessItem() {
     const restartApp = () => {
         history.push('/')
         dispatch({
-        type: 'RESET_ALL'
+            type: 'RESET_ALL'
         });
     }
 

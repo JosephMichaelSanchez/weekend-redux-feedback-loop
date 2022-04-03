@@ -16,7 +16,7 @@ function ReviewItem() {
     const history = useHistory();
 
     const handleSubmit = () => {
-        
+
 
         const feedback = {
             feeling: feeling,
@@ -27,12 +27,12 @@ function ReviewItem() {
         };
         console.log(feedback);
 
-        axios.post(`/feedback`, feedback )
-        .then(response => {
-            history.push('/success')
-        }).catch(err => {
-            console.log(err);
-        })
+        axios.post(`/feedback`, feedback)
+            .then(response => {
+                history.push('/success')
+            }).catch(err => {
+                console.log(err);
+            })
 
     }
 

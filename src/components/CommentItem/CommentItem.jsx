@@ -23,7 +23,7 @@ function CommentItem() {
         <>
             <h2>Any comments you want to leave?</h2>
             <form onSubmit={onAddNewComment}>
-            <input type="text" placeholder="Comments" onChange={event => setNewComment(event.target.value)} value={newComment}/><button>NEXT</button>
+                <input type="text" placeholder="Comments" onChange={event => setNewComment(event.target.value)} value={newComment} /><button>NEXT</button>
             </form>
         </>
 
