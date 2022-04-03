@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import { HashRouter as Router, Route, Link} from 'react-router';
+
 
 function ReviewItem() {
 
