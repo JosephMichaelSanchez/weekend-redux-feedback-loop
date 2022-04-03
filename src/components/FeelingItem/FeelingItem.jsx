@@ -31,7 +31,7 @@ function FeelingItem() {
         <>
             <FormControl>
                 <FormLabel>How are you feeling today?</FormLabel>
-                <RadioGroup required row value={feelNum} onChange={(e) => setFeelNum(e.target.value)}>
+                <RadioGroup className="radioForm" required row value={feelNum} onChange={(e) => setFeelNum(e.target.value)}>
                     <FormControlLabel control={<Radio />} value="1" label="1" />
                     <FormControlLabel control={<Radio />} value="2" label="2" />
                     <FormControlLabel control={<Radio />} value="3" label="3" />
