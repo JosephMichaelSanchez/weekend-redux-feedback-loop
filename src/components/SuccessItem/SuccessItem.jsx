@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import Button from '@material-ui/core/Button';
 
 function SuccessItem() {
 
@@ -16,7 +17,7 @@ function SuccessItem() {
     return (
         <>
             <p>Thank you!</p>
-            <button onClick={restartApp}>Leave New Feedback</button>
+            <Button onClick={restartApp} size="large" variant="contained" color="primary">Leave New Feedback</Button>
         </>
     )
 }
