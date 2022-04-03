@@ -1,6 +1,9 @@
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import swal from 'sweetalert';
+
 
 
 function ReviewItem() {
@@ -29,6 +32,12 @@ function ReviewItem() {
 
         axios.post(`/feedback`, feedback)
             .then(response => {
+                swal({
+                    title: "Feedback Submitted!",
+                    text: "Thank you!!",
+                    icon: "success",
+                    button: "OK",
+                });
                 history.push('/success')
             }).catch(err => {
                 console.log(err);
@@ -48,7 +57,7 @@ function ReviewItem() {
             <p>Understanding: {understanding}</p>
             <p>Support: {support}</p>
             <p>Comments: {comments}</p>
-            <button onClick={handleSubmit}>SUBMIT</button>
+            <Button onClick={handleSubmit} size="large" variant="contained" color="primary">SUBMIT</Button>
         </>
 
     )
