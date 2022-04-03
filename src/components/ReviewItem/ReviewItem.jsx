@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { axios } from 'axios';
+import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { HashRouter as Router, Route, Link} from 'react-router';
 
@@ -13,20 +13,23 @@ function ReviewItem() {
 
     const comments = useSelector(store => store.commentReducer)
 
+    const history = useHistory();
+
     const handleSubmit = () => {
+        
 
         const feedback = {
-            feeling: 2,
-            understanding: 2,
-            support: 2,
-            comments: 'thanks'
+            feeling: feeling,
+            understanding: understanding,
+            support: support,
+            comments: comments
 
         };
         console.log(feedback);
 
-        axios.post('/feedback', feedback )
+        axios.post(`/feedback`, feedback )
         .then(response => {
-            // history.push('/success')
+            history.push('/success')
         }).catch(err => {
             console.log(err);
         })
