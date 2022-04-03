@@ -1,15 +1,23 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import { FormControlLabel } from '@material-ui/core'
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+
 
 function FeelingItem() {
 
-    const [feelNum, setFeelNum] = useState('')
+    const [feelNum, setFeelNum] = useState('3')
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const onAddFeelNum = (event) => {
-        event.preventDefault();
+    const onAddFeelNum = (e) => {
+        e.preventDefault();
         dispatch({
             type: 'SET_FEELING_NUMBER',
             payload: feelNum
@@ -21,10 +29,18 @@ function FeelingItem() {
 
     return (
         <>
-            <h2>How are you feeling today?</h2>
-            <form onSubmit={onAddFeelNum}>
-                <input required onChange={event => setFeelNum(event.target.value)} min={1} max={5} value={feelNum} type="number" /><button>NEXT</button>
-            </form>
+            <FormControl>
+                <FormLabel>How are you feeling today?</FormLabel>
+                <RadioGroup required row value={feelNum} onChange={(e) => setFeelNum(e.target.value)}>
+                    <FormControlLabel control={<Radio />} value="1" label="1" />
+                    <FormControlLabel control={<Radio />} value="2" label="2" />
+                    <FormControlLabel control={<Radio />} value="3" label="3" />
+                    <FormControlLabel control={<Radio />} value="4" label="4" />
+                    <FormControlLabel control={<Radio />} value="5" label="5" />
+                </RadioGroup>
+                <Button onClick={onAddFeelNum} size="large" variant="contained" color="primary">NEXT</Button>
+            </FormControl>
+
         </>
     )
 
