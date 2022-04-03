@@ -22,7 +22,7 @@ function FeelingItem() {
             type: 'SET_FEELING_NUMBER',
             payload: feelNum
         });
-        setFeelNum('');
+        setFeelNum('3');
         history.push('/understand');
     };
 

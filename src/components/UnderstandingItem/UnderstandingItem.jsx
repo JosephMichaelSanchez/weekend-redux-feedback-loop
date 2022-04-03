@@ -11,7 +11,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 
 function UnderstandingItem() {
 
-    const [undNum, setUndNum] = useState('')
+    const [undNum, setUndNum] = useState('3')
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -21,7 +21,7 @@ function UnderstandingItem() {
             type: 'SET_UNDERSTANDING_NUMBER',
             payload: undNum
         });
-        setUndNum('');
+        setUndNum('3');
         history.push('/support');
     };
 
