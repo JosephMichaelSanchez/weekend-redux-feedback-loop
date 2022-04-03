@@ -7,6 +7,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+// reducer to store the feeling score
 const feelingReducer = (state = 0, action) => {
     console.log('I am the feelingReducer');
     if (action.type === 'SET_FEELING_NUMBER') {
@@ -18,6 +19,7 @@ const feelingReducer = (state = 0, action) => {
     return state;
 };
 
+// reducer to store the understanding score
 const understandingReducer = (state = 0, action) => {
     console.log('I am the understandingReducer');
     if (action.type === 'SET_UNDERSTANDING_NUMBER') {
@@ -29,6 +31,7 @@ const understandingReducer = (state = 0, action) => {
     return state;
 };
 
+// reducer to store the supported score
 const supportedReducer = (state = 0, action) => {
     console.log('I am the supportedReducer');
     if (action.type === 'SET_SUPPORT_NUMBER') {
@@ -40,6 +43,7 @@ const supportedReducer = (state = 0, action) => {
     return state;
 };
 
+// reducer to store the final comment
 const commentReducer = (state = '', action) => {
     console.log('I am the commentReducer');
     if (action.type === 'SET_COMMENT') {
@@ -51,7 +55,7 @@ const commentReducer = (state = '', action) => {
     return state;
 };
 
-
+// create store and combine reducers
 const storeInstance = createStore(
     combineReducers(
         {

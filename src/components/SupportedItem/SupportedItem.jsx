@@ -11,10 +11,12 @@ import FormLabel from '@material-ui/core/FormLabel';
 
 function SupportedItem() {
 
+    // useState to set supNum before it is dispatched
     const [supNum, setSupNum] = useState('3')
     const dispatch = useDispatch();
     const history = useHistory();
 
+    // function to dispatch supNum to it's reducer
     const onAddSupNum = (e) => {
         e.preventDefault();
         dispatch({
@@ -22,6 +24,7 @@ function SupportedItem() {
             payload: supNum
         });
         setSupNum('3');
+        // push user to comment page after submission
         history.push('/comment');
     };
 

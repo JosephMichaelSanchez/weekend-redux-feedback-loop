@@ -11,10 +11,12 @@ import FormLabel from '@material-ui/core/FormLabel';
 
 function UnderstandingItem() {
 
+    // useState to set undNum before it is dispatched
     const [undNum, setUndNum] = useState('3')
     const dispatch = useDispatch();
     const history = useHistory();
 
+    // function to dispatch undNum to it's reducer
     const onAddUndNum = (e) => {
         e.preventDefault();
         dispatch({
@@ -22,6 +24,7 @@ function UnderstandingItem() {
             payload: undNum
         });
         setUndNum('3');
+        // push user to support page after submission
         history.push('/support');
     };
 

@@ -7,10 +7,12 @@ import Button from '@material-ui/core/Button';
 
 function CommentItem() {
 
+    // useState to set comment before it is dispatched
     const [newComment, setNewComment] = useState('')
     const dispatch = useDispatch();
     const history = useHistory();
 
+    // function to dispatch newComment to it's reducer
     const onAddNewComment = (e) => {
         e.preventDefault();
         dispatch({
@@ -18,6 +20,7 @@ function CommentItem() {
             payload: newComment
         });
         setNewComment('');
+        // push user to review page after submission
         history.push('/review');
     };
 

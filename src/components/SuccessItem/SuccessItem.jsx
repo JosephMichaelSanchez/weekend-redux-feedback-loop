@@ -7,6 +7,7 @@ function SuccessItem() {
     const history = useHistory();
     const dispatch = useDispatch();
 
+    // function to restart the feedback, pushes user to 1st page and resets the reducers
     const restartApp = () => {
         history.push('/')
         dispatch({

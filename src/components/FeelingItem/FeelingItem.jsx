@@ -12,10 +12,12 @@ import FormLabel from '@material-ui/core/FormLabel';
 
 function FeelingItem() {
 
+    // useState to set feelNum before it is dispatched
     const [feelNum, setFeelNum] = useState('3')
     const dispatch = useDispatch();
     const history = useHistory();
 
+    // function to dispatch feelNum to it's reducer
     const onAddFeelNum = (e) => {
         e.preventDefault();
         dispatch({
@@ -23,6 +25,7 @@ function FeelingItem() {
             payload: feelNum
         });
         setFeelNum('3');
+        // push user to understand page after submission
         history.push('/understand');
     };
 

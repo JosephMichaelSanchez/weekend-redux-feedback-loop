@@ -8,6 +8,7 @@ import swal from 'sweetalert';
 
 function ReviewItem() {
 
+    // create variables from the current states of the reducers
     const feeling = useSelector(store => store.feelingReducer)
 
     const understanding = useSelector(store => store.understandingReducer)
@@ -18,9 +19,10 @@ function ReviewItem() {
 
     const history = useHistory();
 
+    // function to submit the form values to the database
     const handleSubmit = () => {
 
-
+        // create an object using the variables
         const feedback = {
             feeling: feeling,
             understanding: understanding,
@@ -30,6 +32,7 @@ function ReviewItem() {
         };
         console.log(feedback);
 
+        // post the object, display a Sweet Alert, push user to success page
         axios.post(`/feedback`, feedback)
             .then(response => {
                 swal({
@@ -52,6 +55,7 @@ function ReviewItem() {
 
     return (
         <>
+            {/* summary of form values - current states of the reducers */}
             <h2>Review Your Feedback</h2>
             <p>Feelings: {feeling}</p>
             <p>Understanding: {understanding}</p>

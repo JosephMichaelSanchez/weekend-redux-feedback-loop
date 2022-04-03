@@ -12,6 +12,8 @@ import SuccessItem from '../SuccessItem/SuccessItem';
 
 function App() {
 
+  // wrap in router to create routes
+  // each page will have it's own path
   return (
     <Router>
 
