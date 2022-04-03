@@ -1,6 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
 
 function CommentItem() {
 
@@ -8,8 +11,8 @@ function CommentItem() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const onAddNewComment = (event) => {
-        event.preventDefault();
+    const onAddNewComment = (e) => {
+        e.preventDefault();
         dispatch({
             type: 'SET_COMMENT',
             payload: newComment
@@ -22,9 +25,10 @@ function CommentItem() {
 
         <>
             <h2>Any comments you want to leave?</h2>
-            <form onSubmit={onAddNewComment}>
-                <input type="text" placeholder="Comments" onChange={event => setNewComment(event.target.value)} value={newComment} /><button>NEXT</button>
-            </form>
+
+            <TextField style={{ width: 500 }} label="Comments" type="text" onChange={(e) => setNewComment(e.target.value)} value={newComment} />
+            <Button onClick={onAddNewComment} size="large" variant="contained" color="primary">NEXT</Button>
+
         </>
 
 
